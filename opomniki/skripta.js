@@ -10,7 +10,25 @@ window.addEventListener('load', function() {
 	
 	document.querySelector("#prijavniGumb")
 			.addEventListener("click", izvediPrijavo);
+	
+	
+	//Dodaj opomnik
+	var dodajOpomnik = function(){
+		var vrednost = document.querySelector("#naziv_opomnika").value;
+		//document.querySelector("#uporabnik").innerHTML = vrednost;
+		var cas = document.querySelector("#cas_opomnika").value;
+		//document.querySelector("#uporabnik").innerHTML = cas;
 		
+		document.querySelector("#naziv_opomnika").value = "";
+		document.querySelector("#cas_opomnika").value = "";
+		document.querySelector("#opomniki").innerHTML += "<div class='opomnik senca rob'><div class='naziv_opomnika'>" + vrednost + "</div><div class='cas_opomnika'> Opomnik čez <span>" + cas + "</span> sekund.</div></div>";
+	}
+	
+	document.querySelector("#dodajGumb")
+			.addEventListener("click", dodajOpomnik);
+		
+	
+	
 	//Posodobi opomnike
 	var posodobiOpomnike = function() {
 		var opomniki = document.querySelectorAll(".opomnik");
